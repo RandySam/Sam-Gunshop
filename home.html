@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sam Gunshop - Premium Firearms & Accessories</title>
+    <link rel="stylesheet" href="../css/home.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Sam Gunshop</div>
+                <div class="user-actions">
+                    <button class="cart-icon" onclick="showCart()">
+                        🛒 <span class="cart-count" id="cart-count">0</span>
+                    </button>
+                    <button class="form-button" onclick="showPage('login')" id="login-btn">Login</button>
+                    <button class="form-button" onclick="logout()" id="logout-btn" style="display: none;">Logout</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="#" onclick="showPage('home')">Home</a></li>
+                <li><a href="#" onclick="showPage('catalog')">Catalog</a></li>
+                <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+                <li><a href="#" onclick="showPage('faq')">FAQ</a></li>
+                <li><a href="#" onclick="showPage('admin')" id="admin-link" style="display: none;">Admin Dashboard</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Home Page -->
+        <div id="home" class="page active">
+            <div class="hero">
+                <div class="hero-content">
+                    <h1>SAM GUNSHOP</h1>
+                    <p class="hero-subtitle">Premium Firearms & Accessories Since 1985</p>
+                    <p>Your trusted source for quality firearms, expert service, and competitive prices</p>
+                    
+                    <div class="hero-features">
+                        <div class="hero-feature">
+                            <h3>🎯 Expert Service</h3>
+                            <p>40+ years of firearms expertise</p>
+                        </div>
+                        <div class="hero-feature">
+                            <h3>🛡️ Licensed & Insured</h3>
+                            <p>Fully compliant FFL dealer</p>
+                        </div>
+                        <div class="hero-feature">
+                            <h3>📦 Fast Shipping</h3>
+                            <p>Quick & secure nationwide delivery</p>
+                        </div>
+                    </div>
+                    
+                    <button class="cta-button" onclick="showPage('catalog')">Explore Our Collection</button>
+                </div>
+                
+                <div class="scroll-indicator" onclick="scrollToProducts()">
+                    ↓
+                </div>
+            </div>
+
+            <div class="content-section">
+                <div class="container">
+                    <h2 class="text-center mb-2">Featured Products</h2>
+                    <div class="product-grid" id="featured-products">
+                        <!-- Featured products will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Catalog Page -->
+        <div id="catalog" class="page">
+            <div class="container">
+                <h2 class="text-center mb-2">Our Complete Catalog</h2>
+                <div class="product-grid" id="catalog-products">
+                    <!-- All products will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Login Page -->
+        <div id="login" class="page">
+            <div class="form-container">
+                <h2 class="text-center mb-2">Login</h2>
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <button type="submit" class="form-button">Login</button>
+                </form>
+                <p class="text-center" style="margin-top: 1rem;">
+                    Don't have an account? <a href="#" onclick="showPage('register')">Register here</a>
+                </p>
+            </div>
+        </div>
+
+        <!-- Register Page -->
+        <div id="register" class="page">
+            <div class="form-container">
+                <h2 class="text-center mb-2">Register</h2>
+                <form id="register-form">
+                    <div class="form-group">
+                        <label for="reg-username">Username</label>
+                        <input type="text" id="reg-username" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-email">Email</label>
+                        <input type="email" id="reg-email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-password">Password</label>
+                        <input type="password" id="reg-password" name="password" required>
+                    </div>
+                    <button type="submit" class="form-button">Register</button>
+                </form>
+                <p class="text-center" style="margin-top: 1rem;">
+                    Already have an account? <a href="#" onclick="showPage('login')">Login here</a>
+                </p>
+            </div>
+        </div>
+
+        <!-- Contact Page -->
+        <div id="contact" class="page">
+            <div class="container">
+                <div class="form-container">
+                    <h2 class="text-center mb-2">Contact Us</h2>
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="contact-name">Name</label>
+                            <input type="text" id="contact-name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-email">Email</label>
+                            <input type="email" id="contact-email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-message">Message</label>
+                            <textarea id="contact-message" name="message" rows="5" style="width: 100%; padding: 0.8rem; border: 2px solid #ddd; border-radius: 4px; font-size: 1rem; resize: vertical;" required></textarea>
+                        </div>
+                        <button type="submit" class="form-button">Send Message</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="admin-section">
+                <h2>Store Information</h2>
+                <p><strong>Address:</strong> 1337 Battlefield Road, Springfield, MO 65804</p>
+                <p><strong>Phone:</strong> (555) 123-4567</p>
+                <p><strong>Email:</strong> info@samgunshop.com</p>
+                <p><strong>Hours:</strong> Mon-Fri 9AM-6PM, Sat 9AM-4PM, Closed Sunday</p>
+            </div>
+        </div>
+
+        <!-- FAQ Page -->
+        <div id="faq" class="page">
+            <div class="container">
+                <h2 class="text-center mb-2">Frequently Asked Questions</h2>
+            
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        What are your shipping policies?
+                    </div>
+                    <div class="faq-answer">
+                        We ship nationwide following all federal and state regulations. All firearms must be shipped to a licensed FFL dealer. Shipping times are typically 3-5 business days. We use insured shipping for all orders.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        Do you offer background check services?
+                    </div>
+                    <div class="faq-answer">
+                        Yes, we facilitate all required background checks through licensed FFL dealers. All sales comply with federal and state laws. Please bring valid ID and any required permits.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        What is your return policy?
+                    </div>
+                    <div class="faq-answer">
+                        Returns are accepted within 30 days of purchase for unused items in original packaging. Firearms must be returned to the original FFL dealer. A 15% restocking fee applies to all returns.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        Do you offer layaway services?
+                    </div>
+                    <div class="faq-answer">
+                        Yes, we offer layaway services for purchases over $500. A 20% deposit is required to hold items for up to 90 days. Items must be paid in full before pickup.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        What payment methods do you accept?
+                    </div>
+                    <div class="faq-answer">
+                        We accept cash, check, and major credit cards (Visa, MasterCard, American Express). All transactions are processed securely and in compliance with banking regulations.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Sam Gunshop. All rights reserved. | Licensed Federal Firearms Dealer</p>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
