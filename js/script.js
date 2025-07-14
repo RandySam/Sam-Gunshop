@@ -7,7 +7,7 @@ const products = [
         description: "Semi-automatic rifle with 16-inch barrel",
         stock: 5,
         featured: true,
-        image: "../images/Mp15bg.jpg"
+        image: "images/Mp15bg.jpg"
 
     },
     {
@@ -18,7 +18,7 @@ const products = [
         description: "Compact 9mm pistol",
         stock: 8,
         featured: true,
-        image: "../images/glock19.jpg"
+        image: "images/glock19.jpg"
     },
     {
         id: 3,
@@ -28,7 +28,7 @@ const products = [
         description: "12-gauge pump-action shotgun",
         stock: 3,
         featured: true,
-        image: "../images/remington.jpeg"
+        image: "images/remington.jpeg"
     },
     {
         id: 4,
@@ -38,7 +38,7 @@ const products = [
         description: "Semi-automatic .22 LR rifle",
         stock: 12,
         featured: false,
-        image: "../images/ruger.jpg"
+        image: "images/ruger.jpg"
     },
     {
         id: 5,
@@ -48,7 +48,7 @@ const products = [
         description: "Modular striker-fired pistol",
         stock: 6,
         featured: false,
-        image: "../images/sig.jpeg"
+        image: "images/sig.jpeg"
     },
     {
         id: 6,
@@ -58,7 +58,7 @@ const products = [
         description: "Versatile pump-action shotgun",
         stock: 4,
         featured: false,
-        image: "../images/mossberg.png"
+        image: "images/mossberg.png"
     }
 
 ];
